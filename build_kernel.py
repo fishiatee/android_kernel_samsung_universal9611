@@ -108,7 +108,7 @@ def main():
                    'CC=clang', 'LD=ld.lld', 'AS=llvm-as', 'AR=llvm-ar',
                    'OBJDUMP=llvm-objdump', 'READELF=llvm-readelf', 'NM=llvm-nm',
                    'OBJCOPY=llvm-objcopy', 'ARCH=arm64', f'-j{os.cpu_count()}']
-    make_defconfig = make_common + [f'exynos9611-{args.target}_defconfig']
+    make_defconfig = make_common + [f'exynos9611-{args.target}_defconfig'] + ["droidspaces.config"]
 
     start_time = datetime.now()
     log('Running make defconfig...')
